@@ -1,0 +1,1 @@
+1.storybook一直安装不完全，需要用yarn
