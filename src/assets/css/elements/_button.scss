@@ -1,0 +1,884 @@
+@import "~assets/css/settings/themes/elements/button";
+/**
+  * Default Button style
+  */
+
+.dp-button {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  padding: $padding-btn;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-family: $font-family-primary;
+  font-size: $font-size-16;
+  font-weight: 700;
+  line-height: $line-height-btn;
+  border: none;
+  border-radius: $border-radius-base;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  &.disabled,
+  &[aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+  @include themify($themes-button) {
+    padding: themed("padding-btn");
+    line-height: themed("line-height-btn");
+  }
+  @include themify($themes-fonts) {
+    font-family: themed("font-family-primary");
+    font-size: themed("font-size-16");
+  }
+  /**
+    * Block
+    */
+
+  &--block {
+    display: block;
+  }
+
+  /**
+    * Size
+    */
+  &--xs {
+    font-size: $font-size-14;
+
+    padding: $padding-xs-v $padding-xs-h;
+  }
+  &--sm {
+    padding-top: $padding-top-btn-sm;
+    padding-bottom: $padding-bottom-btn-sm;
+    font-size: $font-size-12;
+    border-radius: $border-radius-small;
+    line-height: $line-height-btn-sm;
+    @include themify($themes-button) {
+      padding-top: themed("padding-top-btn-sm");
+      padding-bottom: themed("padding-bottom-btn-sm");
+      line-height: themed("line-height-btn-sm");
+    }
+    @include themify($themes-fonts) {
+      font-size: themed("font-size-12");
+    }
+  }
+  /**
+    * Variant
+    */
+  &--primary {
+    @extend %button-primary-style;
+  }
+
+  &--ghost {
+    &-primary,
+    &-primary-light,
+    &-secondary {
+      @extend %button-ghost-style;
+    }
+  }
+
+  &--home {
+    &-primary,
+    &-secondary {
+      @extend %button-home-style;
+    }
+  }
+
+  &--tertiary {
+    @extend %button-tertiary-style;
+  }
+
+  &--text {
+    @extend %button-text-style;
+  }
+
+  &--radio,
+  &--checkbox {
+    @extend %button-checkbox-radio-style;
+  }
+
+  /**
+    * icon
+    */
+  &__icon {
+    &--left {
+      margin-right: 8px;
+    }
+    &--right {
+      margin-left: 8px;
+    }
+  }
+}
+
+/**
+  * Text button style
+  */
+
+%button-text-style {
+  background-color: $color-text-btn-bg;
+  color: $color-text-btn-text;
+  padding-top: $padding-top-btn-text;
+  padding-bottom: $padding-bottom-btn-text;
+
+  &:hover,
+  &:focus {
+    color: $color-text-btn-text-hover;
+    background-color: $color-text-btn-bg;
+  }
+
+  &.disabled,
+  &[aria-disabled="true"] {
+    background-color: $color-text-btn-bg;
+    cursor: not-allowed;
+    color: $color-btn-disable;
+  }
+
+  .rippleJS .ripple {
+    background-color: $color-text-btn-ripple;
+  }
+
+  &.dp-button--sm {
+    padding-top: $padding-top-btn-text-sm;
+    padding-bottom: $padding-bottom-btn-text-sm;
+    font-size: $font-size-12;
+    border-radius: $border-radius-small;
+    line-height: $line-height-btn-text-sm;
+    @include themify($themes-fonts) {
+      font-size: themed("font-size-12");
+    }
+  }
+
+  @include themify($themes-button) {
+    background-color: themed("color-text-btn-bg");
+    color: themed("color-text-btn-text");
+    padding-top: themed("padding-top-btn-text");
+    padding-bottom: themed("padding-bottom-btn-text");
+    &:hover,
+    &:focus {
+      color: themed("color-text-btn-text-hover");
+      background-color: themed("color-text-btn-bg");
+    }
+
+    &.disabled,
+    &[aria-disabled="true"] {
+      background-color: themed("color-text-btn");
+      color: themed("color-btn-disable");
+    }
+
+    .rippleJS .ripple {
+      background-color: themed("color-text-btn-ripple");
+    }
+    &.dp-button--sm {
+      padding-top: themed("padding-top-btn-text-sm");
+      padding-bottom: themed("padding-bottom-btn-text-sm");
+      line-height: themed("line-height-btn-text-sm");
+    }
+  }
+}
+
+/**
+  * checkbox&radio style
+  */
+
+%button-checkbox-radio-style {
+  padding: $padding-btn-radio-checkbox;
+  background-color: transparent;
+  color: $color-btn-radio-checkbox-text;
+  &:hover {
+    background-color: transparent;
+    color: $color-btn-radio-checkbox-text-hover;
+  }
+  .icon-check {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+  }
+  &.checked {
+    .icon-check:after {
+      content: "";
+      position: absolute;
+      box-sizing: initial;
+    }
+  }
+  &.disabled {
+    color: $color-btn-radio-checkbox-text-disabled;
+    background-color: transparent;
+    &:hover {
+      color: $color-btn-radio-checkbox-text-disabled;
+    }
+    .rippleJS .ripple {
+      background-color: transparent;
+    }
+  }
+  .rippleJS .ripple {
+    background-color: $color-btn-checkbox-radio-ripple;
+  }
+  &.dp-button--sm {
+    padding: $padding-btn-radio-checkbox-sm;
+    .icon-check {
+      margin-right: 6px;
+      width: 12px;
+      height: 12px;
+    }
+  }
+  &.dp-button--radio {
+    .icon-check {
+      border: 1px solid transparent;
+      border-color: $color-btn-radio-circle;
+      border-radius: 50%;
+    }
+    &.checked {
+      .icon-check:after {
+        background-color: $color-btn-radio-dot;
+        border-radius: 50%;
+        width: 6px;
+        height: 6px;
+        top: calc(50% - 3px);
+        left: calc(50% - 3px);
+      }
+    }
+    &.disabled {
+      .icon-check {
+        border-color: $color-btn-radio-dot-disable;
+      }
+      .icon-check:after {
+        background-color: $color-btn-radio-dot-disable;
+      }
+    }
+  }
+  &.dp-button--checkbox {
+    .icon-check {
+      border: 0.5px solid $color-btn-checkbox-border;
+      border-radius: 2px;
+    }
+    &:hover {
+      .icon-check {
+        border-color: $color-btn-checkbox-border-hover;
+      }
+    }
+    &.checked {
+      .icon-check {
+        background-color: $color-btn-checkbox-tick-background;
+      }
+      &:hover .icon-check {
+        background-color: $color-btn-checkbox-tick-background-hover;
+        border-color: $color-btn-checkbox-tick-background-hover;
+      }
+      .icon-check:after {
+        content: "\F00C";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 11px;
+        color: $color-btn-checkbox-tick-text;
+        position: absolute;
+        top: calc(50% - 9px);
+        left: calc(50% - 6px);
+      }
+    }
+    &.disabled {
+      .icon-check {
+        background-color: transparent;
+        border-color: $color-btn-radio-checkbox-border-disable;
+      }
+      &.checked .icon-check {
+        border-color: $color-btn-radio-checkbox-border-disable;
+        background-color: $color-btn-radio-checkbox-background-disable;
+      }
+    }
+    &.dp-button--sm {
+      &.checked {
+        .icon-check:after {
+          font-size: 9px;
+          line-height: 12px;
+          top: calc(50% - 7px);
+          left: calc(50% - 5px);
+        }
+      }
+    }
+  }
+  /* Support a variety of styles */
+  @include themify($themes-button) {
+    padding: themed("padding-btn-radio-checkbox");
+    color: themed("color-btn-radio-checkbox-text");
+    &:hover {
+      color: themed("color-btn-radio-checkbox-text-hover");
+    }
+    &.disabled {
+      color: themed("color-btn-radio-checkbox-text-disabled");
+      &:hover {
+        color: themed("color-btn-radio-checkbox-text-disabled");
+      }
+    }
+    .rippleJS .ripple {
+      background-color: themed("color-btn-checkbox-radio-ripple");
+    }
+    &.dp-button--sm {
+      padding: themed("padding-btn-radio-checkbox-sm");
+    }
+    &.dp-button--radio {
+      &.checked {
+        .icon-check:after {
+          background-color: themed("color-btn-radio-dot");
+        }
+      }
+      &.disabled {
+        .icon-check {
+          border-color: themed("color-btn-radio-circle");
+        }
+        .icon-check:after {
+          background-color: themed("color-btn-radio-dot-disable");
+        }
+      }
+    }
+    &.dp-button--checkbox {
+      &:hover {
+        .icon-check {
+          border-color: themed("color-btn-checkbox-border-hover");
+        }
+      }
+      .icon-check {
+        border-color: themed("color-btn-checkbox-border");
+      }
+      &.checked {
+        .icon-check {
+          background-color: themed("color-btn-checkbox-tick-background");
+        }
+        &:hover .icon-check {
+          background-color: themed("color-btn-checkbox-tick-background-hover");
+          border-color: themed("color-btn-checkbox-tick-background-hover");
+        }
+        .icon-check:after {
+          color: themed("color-btn-checkbox-tick-text");
+        }
+      }
+      &.disabled {
+        &.checked .icon-check {
+          border-color: themed("color-btn-radio-checkbox-border-disable");
+          background-color: themed("color-btn-radio-checkbox-background-disable");
+        }
+      }
+    }
+  }
+}
+/**
+  * Default primary style
+  */
+%button-primary-style {
+  color: $color-btn-primary-text;
+  background-color: $color-btn-primary;
+  border: none;
+  &:hover,
+  &:focus {
+    border-color: $color-btn-primary-hover;
+    background-color: $color-btn-primary-hover;
+  }
+
+  &.disabled,
+  &[aria-disabled="true"] {
+    border-color: $color-btn-disable;
+    background-color: $color-btn-disable;
+  }
+  // Support a variety of styles
+  @include themify($themes-button) {
+    color: themed("color-btn-primary-text");
+    background-color: themed("color-btn-primary");
+    &:hover,
+    &:focus {
+      border-color: themed("color-btn-primary-hover");
+      background-color: themed("color-btn-primary-hover");
+    }
+    &.disabled,
+    &[aria-disabled="true"] {
+      border-color: themed("color-btn-disable");
+      background-color: themed("color-btn-disable");
+    }
+  }
+}
+/**
+  * Default Ghost style
+  */
+
+%button-ghost-style {
+  padding: $padding-btn-ghost;
+  border: 2px solid $color-btn-ghost-border;
+  color: $color-btn-ghost-text;
+  background-color: $color-btn-ghost;
+  &.dp-button--ghost-primary-light {
+    border-color: $color-btn-ghost-primary-light-border;
+    color: $color-btn-ghost-primary-light-text;
+  }
+  &.dp-button--ghost-secondary {
+    border-color: $color-btn-ghost-secondary-border;
+    color: $color-btn-ghost-secondary-text;
+  }
+  &:hover,
+  &:focus {
+    border: none;
+    padding: $padding-btn-ghost-focus;
+    color: $color-btn-ghost-text-hover;
+    background-color: $color-btn-ghost-hover;
+  }
+
+  &.disabled,
+  &[aria-disabled="true"] {
+    cursor: not-allowed;
+    padding: $padding-btn-ghost;
+    border: 2px solid $color-btn-disable;
+    background-color: $color-btn-ghost;
+    color: $color-btn-disable;
+  }
+  &.dp-button--sm {
+    padding: $padding-btn-ghost-sm;
+    border-width: 1px;
+    &:hover,
+    &:focus {
+      padding: $padding-btn-ghost-focus-sm;
+    }
+    &.disabled,
+    &[aria-disabled="true"] {
+      padding: $padding-btn-ghost-focus-sm;
+    }
+  }
+  /* Support a variety of styles */
+  @include themify($themes-button) {
+    padding: themed("padding-btn-ghost");
+    border-color: themed("color-btn-ghost-border");
+    color: themed("color-btn-ghost-text");
+    background-color: themed("color-btn-ghost");
+    &.dp-button--ghost-primary-light {
+      border-color: themed("color-btn-ghost-primary-light-border");
+      color: themed("color-btn-ghost-primary-light-text");
+    }
+    &.dp-button--ghost-secondary,
+    &.dp-button--ghost-secondart:focus {
+      border-radius: themed("radius-btn-ghost-secondary-border");
+      border: themed("btn-ghost-secondary-border");
+      color: themed("color-btn-ghost-secondary-text");
+      padding: themed("padding-btn-ghost-secondary");
+      background-color: themed("color-btn-ghost-secondary-background");
+      &:hover {
+        border: themed("btn-ghost-secondary-border-hover");
+        color: themed("color-btn-ghost-secondary-text-hover");
+        padding: themed("padding-btn-ghost-secondary");
+        background-color: themed("color-btn-ghost-secondary-background-hover");
+      }
+    }
+    &:hover,
+    &:focus {
+      padding: themed("padding-btn-ghost-focus");
+      color: themed("color-btn-ghost-text-hover");
+      background-color: themed("color-btn-ghost-hover");
+    }
+    &.disabled,
+    &[aria-disabled="true"] {
+      padding: themed("padding-btn-ghost");
+      border: themed("color-btn-disable");
+    }
+    &.dp-button--sm {
+      padding: themed("padding-btn-ghost-sm");
+      &:hover,
+      &:focus {
+        padding: themed("padding-btn-ghost-focus-sm");
+      }
+      &.disabled,
+      &[aria-disabled="true"] {
+        padding: themed("padding-btn-ghost-focus-sm");
+      }
+    }
+  }
+}
+
+/**
+  * Default Home style
+  */
+%button-home-style {
+  border: $color-btn-home-border;
+  font-size: $font-size-12;
+  text-align: left;
+  text-transform: uppercase;
+  color: $color-text-white-1;
+  box-shadow: $box-shadow-base;
+  transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
+
+  @include sm {
+    font-size: $font-size-14;
+  }
+
+  &.dp-button--home-primary {
+    border-radius: $radius-btn-home-primary;
+    padding: $padding-btn-home-primary;
+    background-color: $color-btn-home-primary-background;
+    color: $color-btn-home-primary-text;
+
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
+      background-color: $color-btn-home-primary-background-hover;
+      border-color: $color-btn-home-primary-background-hover;
+      color: $color-btn-home-primary-text-hover;
+      box-shadow: $box-shadow-active;
+      transform: translateY(-2px);
+    }
+  }
+
+  &.dp-button--home-secondary {
+    border-radius: $radius-btn-home-secondary;
+    padding: $padding-btn-home-secondary;
+    background-color: $color-btn-home-secondary-background;
+    color: $color-btn-home-secondary-text;
+
+    &:focus:not([disabled]),
+    &:hover:not([disabled]) {
+      background-color: $color-btn-home-secondary-background-hover;
+      border-color: $color-btn-home-secondary-border-hover;
+      color: $color-btn-home-secondary-text-hover;
+      box-shadow: $box-shadow-active;
+      transform: translateY(-2px);
+    }
+  }
+
+  &.disabled,
+  &[aria-disabled="true"] {
+    cursor: not-allowed;
+    &.dp-button--home-primary {
+      background-color: $color-btn-home-primary-background-disabled;
+    }
+    &.dp-button--home-secondary {
+      color: $color-btn-home-secondary-text-disabled;
+    }
+  }
+
+  /* Support a variety of styles */
+  @include themify($themes-button) {
+    &.dp-button--home-primary {
+      background-color: themed("color-btn-home-primary-background");
+      color: themed("color-btn-home-primary-text");
+
+      &:focus:not([disabled]),
+      &:hover:not([disabled]) {
+        background-color: themed("color-btn-home-primary-background-hover");
+        border-color: themed("color-btn-home-primary-background-hover");
+        color: themed("color-btn-home-primary-text-hover");
+      }
+    }
+    &.dp-button--home-secondary {
+      background-color: themed("color-btn-home-secondary-background");
+      color: themed("color-btn-home-secondary-text");
+
+      &:focus:not([disabled]),
+      &:hover:not([disabled]) {
+        background-color: themed("color-btn-home-secondary-background-hover");
+        border-color: themed("color-btn-home-secondary-border-hover");
+        color: themed("color-btn-home-secondary-text-hover");
+      }
+    }
+    &.disabled,
+    &[aria-disabled="true"] {
+      opacity: themed("opacity-btn-home-disabled");
+    }
+  }
+}
+
+%button-tertiary-style {
+  font-weight: normal;
+  text-transform: none;
+
+  box-shadow: 0 2px 8px 0 rgba($color-box-shadow-black-1, 0.2);
+
+  color: $color-btn-tertiary-text;
+  background: $color-btn-tertiary-background;
+
+  transition: box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
+
+  &:not(.disabled):not([aria-disabled="true"]) {
+    &:hover,
+    &:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px 0 rgba($color-box-shadow-black-1, 0.2);
+    }
+  }
+
+  &.disabled,
+  &[aria-disabled="true"] {
+    color: $color-btn-tertiary-text-disabled;
+  }
+}
+
+/* Support the old version of the structure */
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  font-size: $font-size-16;
+  line-height: $line-height-old-btn;
+  border-radius: $border-radius-base;
+  padding: 11px 20px;
+  border-width: 2px;
+  border-style: solid;
+  position: relative;
+  z-index: 1;
+  @include themify($themes-button) {
+    line-height: themed("line-height-old-btn");
+  }
+  @include themify($themes-fonts) {
+    font-size: themed("font-size-16");
+  }
+  &[disabled],
+  &[disabled]:hover,
+  &.disabled,
+  &.disabled:hover {
+    opacity: 0.4;
+    cursor: not-allowed;
+    .rippleJS {
+      display: none;
+    }
+  }
+  &:focus,
+  &:active:focus {
+    outline: 0;
+    outline-offset: 0;
+  }
+  &:active,
+  &.active {
+    box-shadow: none;
+  }
+  .rippleJS {
+    border-radius: initial;
+  }
+
+  &.btn-link {
+    font-weight: 700;
+    background-color: $color-text-btn-bg;
+    border: none;
+    color: $color-text-btn-text;
+    .rippleJS .ripple {
+      background-color: $color-text-btn-ripple;
+    }
+    &:active,
+    &:active:focus,
+    &:active:hover,
+    &:hover {
+      color: $color-text-btn-text-hover;
+    }
+    &[disabled],
+    &[disabled]:hover,
+    &.disabled,
+    &.disabled:hover {
+      opacity: 1;
+      background-color: $color-text-btn-bg;
+      color: $color-btn-disable;
+    }
+
+    @include themify($themes-button) {
+      background-color: themed("color-text-btn-bg");
+      color: themed("color-text-btn-text");
+      .rippleJS .ripple {
+        background-color: themed("color-text-btn-ripple");
+      }
+      &:active,
+      &:active:focus,
+      &:active:hover,
+      &:hover {
+        color: themed("color-text-btn-text-hover");
+      }
+      &[disabled]:hover {
+        color: themed("color-btn-disable");
+        background-color: themed("color-text-btn-bg");
+      }
+    }
+  }
+}
+
+.btn-primary {
+  background-color: $color-btn-primary;
+  border-color: $color-btn-primary;
+  color: $color-btn-primary-text;
+  &[disabled],
+  &.disabled {
+    opacity: 1;
+    background-color: $color-btn-disable;
+    border-color: $color-btn-disable;
+    color: $color-btn-primary-text;
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:focus,
+    &:active:hover {
+      opacity: 1;
+      background-color: $color-btn-disable;
+      border-color: $color-btn-disable;
+      color: $color-btn-primary-text;
+    }
+  }
+  &:focus {
+    background-color: $color-btn-primary;
+    border-color: $color-btn-primary;
+    color: $color-btn-primary-text;
+  }
+  &:hover,
+  &:active,
+  &:active:focus,
+  &:active:hover {
+    background-color: $color-btn-primary-hover;
+    border-color: $color-btn-primary-hover;
+    color: $color-btn-primary-text;
+  }
+  &:active:focus,
+  &:active:hover {
+    // border-color: #4dc26b;
+    border-color: $color-btn-primary-hover;
+    transition: border-color 1s;
+  }
+  @include themify($themes-button) {
+    background-color: themed("color-btn-primary");
+    border-color: themed("color-btn-primary");
+    color: themed("color-btn-primary-text");
+    &[disabled],
+    &.disabled {
+      background-color: themed("color-btn-disable");
+      border-color: themed("color-btn-disable");
+      color: themed("color-btn-primary-text");
+      &:hover,
+      &:active,
+      &:focus,
+      &:active:focus,
+      &:active:hover {
+        background-color: themed("color-btn-disable");
+        border-color: themed("color-btn-disable");
+        color: themed("color-btn-primary-text");
+      }
+    }
+    &:focus {
+      background-color: themed("color-btn-primary");
+      border-color: themed("color-btn-primary");
+      color: themed("color-btn-primary-text");
+    }
+    &:hover,
+    &:active,
+    &:active:focus,
+    &:active:hover {
+      background-color: themed("color-btn-primary-hover");
+      border-color: themed("color-btn-primary-hover");
+      color: themed("color-btn-primary-text");
+    }
+    &:active:focus,
+    &:active:hover {
+      // border-color: #4dc26b;
+      border-color: themed("color-btn-primary-hover");
+    }
+  }
+}
+
+.btn-lg {
+  padding: 15px 24px;
+  border-radius: 4px;
+}
+
+.btn-sm {
+  padding: 7px 20px;
+  letter-spacing: 1px;
+  border-radius: 2px;
+}
+
+.btn-xs {
+  padding: 4px 8px;
+  letter-spacing: 1px;
+  border-width: 1px;
+  font-weight: 400;
+  border-radius: 2px;
+}
+
+.btn-black-line,
+.btn-white-line {
+  @extend .btn-primary;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 4px;
+  font-size: $font-size-16;
+  background: $color-btn-ghost;
+  @include themify($themes-button) {
+    background: themed("color-btn-ghost");
+  }
+}
+
+.btn-black-line {
+  border: solid 1px $color-btn-ghost-border;
+  color: $color-btn-ghost-text;
+  @include themify($themes-button) {
+    border-color: themed("color-btn-ghost-border");
+    color: themed("color-btn-ghost-text");
+  }
+}
+
+.btn-white-line {
+  border: solid 2px $color-btn-ghost-primary-light-border;
+  color: $color-btn-ghost-primary-light-text;
+  @include themify($themes-button) {
+    border-color: themed("color-btn-ghost-primary-light-border");
+    color: themed("color-btn-ghost-primary-light-text");
+  }
+}
+
+html.tablet,
+html.mobile {
+  .btn-primary {
+    &:hover,
+    &:active:hover {
+      background-color: $color-btn-primary;
+      border-color: $color-btn-primary;
+    }
+    &[disabled],
+    &.disabled {
+      background-color: $color-btn-disable;
+      border-color: $color-btn-disable;
+      &:hover,
+      &:active,
+      &:focus,
+      &:active:focus,
+      &:active:hover {
+        background-color: $color-btn-disable;
+        border-color: $color-btn-disable;
+      }
+    }
+    @include themify($themes-button) {
+      &:hover,
+      &:active:hover {
+        background-color: themed("color-btn-primary");
+        border-color: themed("color-btn-primary");
+      }
+      &[disabled],
+      &.disabled {
+        background-color: themed("color-btn-disable");
+        border-color: themed("color-btn-disable");
+        color: themed("color-btn-primary-text");
+        &:hover,
+        &:active,
+        &:focus,
+        &:active:focus,
+        &:active:hover {
+          background-color: themed("color-btn-disable");
+          border-color: themed("color-btn-disable");
+          color: themed("color-btn-primary-text");
+        }
+      }
+    }
+  }
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  &+.btn-block {
+    margin-top: 5px;
+  }
+}

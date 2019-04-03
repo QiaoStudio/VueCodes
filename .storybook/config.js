@@ -1,9 +1,8 @@
 import { configure, setAddon } from '@storybook/vue'
-import { setOptions } from '@storybook/addon-options'
-// import 'src/dependency'
-// import Vue from 'vue'
-// import components from 'src/register'
-// import moment from 'moment'
+import { withOptions } from '@storybook/addon-options'
+import 'src/dependency'
+import Vue from 'vue'
+import { components } from 'src/register'
 // import Screen from 'utilities/screen'
 
 let rootDom = document.querySelector('#root')
@@ -11,8 +10,8 @@ const app = new Vue()
 Vue.use(Screen)
 app.$mount(rootDom)
 
-setOptions({
-  name: 'Vue components',
+withOptions({
+  name: 'Vue Codes',
   url: '',
   goFullScreen: false,
   showLeftPanel: true,
@@ -24,6 +23,8 @@ setOptions({
 components.map((item) => {
   Vue.use(item)
 })
+
+Vue.use(StickyPosition)
 
 function loadStories() {
   require('src/stories')

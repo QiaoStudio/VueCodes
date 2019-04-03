@@ -1,0 +1,14 @@
+{
+  // Use 'IntelliSense' to learn about related properties.
+  // Hover to see a description of an existing property.
+  // more info,please refer: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "start program",
+      "program": "${workspaceFolder}\\ssr-server\\server.js"
+    }
+  ]
+}

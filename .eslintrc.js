@@ -1,5 +1,3 @@
-// https://eslint.org/docs/user-guide/configuring
-
 module.exports = {
   root: true,
   parserOptions: {
@@ -8,22 +6,44 @@ module.exports = {
   env: {
     browser: true,
   },
+  "globals": {
+    "$": true,
+    "select": true,
+    "text": true,
+    "boolean": true,
+    "number": true,
+    "array": true,
+    "date": true
+  },
+  // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
   extends: [
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential', 
-    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-    'standard'
+    'standard',
+    'plugin:vue/strongly-recommended'
   ],
   // required to lint *.vue files
   plugins: [
     'vue'
   ],
   // add your custom rules here
-  rules: {
+  'rules': {
+    // allow paren-less arrow functions
+    'arrow-parens': 0,
     // allow async-await
-    'generator-star-spacing': 'off',
+    'generator-star-spacing': 0,
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-alert': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    "space-before-function-paren": ["error", {
+      "anonymous": "ignore",
+      "named": "ignore",
+      "asyncArrow": "ignore"
+    }],
+    "no-eval": ["error", { "allowIndirect": true }], // default is false
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
+    "vue/name-property-casing": ["error", "kebab-case"],
+    "vue/max-attributes-per-line": 0,
+    "vue/require-default-prop": 0,
+    "vue/html-self-closing": 0,
+    "vue/valid-template-root": 0
   }
 }
