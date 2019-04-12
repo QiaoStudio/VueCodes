@@ -5,6 +5,8 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const webpack = require('webpack')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -79,13 +81,19 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
   plugins:[
-    // new webpack.ProvidePlugin({
-    //   $:"jquery",
-    //   jQuery:"jquery",
-    //   "window.jQuery":"jquery"
-    // }),
-    new StyleLintPlugin()
+    new webpack.ProvidePlugin({
+      $:"jquery",
+      jQuery:"jquery",
+      "window.jQuery":"jquery"
+    }),
+    new StyleLintPlugin(),
+    new VueLoaderPlugin()
   ],
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
