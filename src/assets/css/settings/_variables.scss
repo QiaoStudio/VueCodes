@@ -1,0 +1,102 @@
+/*------------------------------------*\
+    #GLOBAL VARIABLES
+\*------------------------------------*/
+
+/**
+  * HTML Base font size
+  */
+
+$html-base-font-size: 10px;
+
+/**
+  * Border Radius
+  */
+
+$border-radius-base: 4px;
+$border-radius-small: 2px;
+$border-radius-large: 8px;
+// By follow overlapping rule here: https://www.w3.org/TR/css-backgrounds-3/#corner-overlap
+$border-radius-pill: 999px;
+
+/**
+  * Box Shadows
+  */
+
+$box-shadow-base: 0 2px 8px 0 rgba($color-background-black-1, 0.2);
+$box-shadow-active: 0 6px 16px 0 rgba($color-background-black-1, 0.1);
+
+/**
+  * Z-Index
+  */
+
+$popup-z-index: 1000;
+$sticky-z-index: 1032;
+
+/**
+  * Spacing
+  */
+
+$spacing-2: 2px;
+$spacing-4: 4px;
+$spacing-6: 6px;
+
+$spacing-8: 8px;
+$spacing-12: 12px;
+$spacing-16: 16px;
+
+$spacing-20: 20px;
+$spacing-24: 24px;
+$spacing-32: 32px;
+
+$spacing-40: 40px;
+$spacing-60: 60px;
+$spacing-80: 80px;
+
+$spacing-120: 120px;
+$spacing-160: 160px;
+$spacing-200: 200px;
+
+/**
+  * Spacing Intensity
+  */
+
+$spacing: (
+
+  "xs-thin": $spacing-2,
+  "xs": $spacing-4,
+  "xs-fat": $spacing-6,
+
+  "sm-thin": $spacing-8,
+  "sm": $spacing-12,
+  "sm-fat": $spacing-16,
+
+  "md-thin": $spacing-20,
+  "md": $spacing-24,
+  "md-fat": $spacing-32,
+
+  "lg-thin": $spacing-40,
+  "lg": $spacing-60,
+  "lg-fat": $spacing-80,
+
+  "xl-thin": $spacing-120,
+  "xl": $spacing-160,
+  "xl-fat": $spacing-200
+
+);
+
+/**
+  * Position
+  */
+
+$positions: ("top", "right", "bottom", "left", "x", "y", "all");
+
+/**
+  * Class "only" on specific size device
+  */
+$screens: (
+  "only-tablet", // onlyTablet
+  "only-mobile-and-tablet", // tabletAndMobile
+  "only-tablet-up", // sm
+  "only-desktop", // md
+  "only-desktop-up" // lg
+);

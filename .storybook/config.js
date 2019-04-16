@@ -3,7 +3,7 @@ import { withOptions } from '@storybook/addon-options'
 import 'src/dependency'
 import Vue from 'vue'
 import { components } from 'src/register'
-// import Screen from 'utilities/screen'
+import Screen from 'utilities/screen'
 
 let rootDom = document.querySelector('#root')
 const app = new Vue()
@@ -23,8 +23,6 @@ withOptions({
 components.map((item) => {
   Vue.use(item)
 })
-
-Vue.use(StickyPosition)
 
 function loadStories() {
   require('src/stories')

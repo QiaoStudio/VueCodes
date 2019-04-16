@@ -7,9 +7,12 @@ yarn-error.log*
 test/unit/coverage
 test/unit/reports/
 !test/unit/reports/.gitkeep
+test/e2e/reports
 selenium-debug.log
 storybook-static/
-yarn.lock
+ssr-server/package-lock.json
+ssr-server/package.json
+ssr-server/yarn.lock
 # Editor directories and files
 .idea
 *.suo

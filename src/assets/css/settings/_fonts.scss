@@ -1,0 +1,123 @@
+/**
+  * Default font family settings
+  */
+
+$font-family-primary:      "Alleyn", Arial, sans-serif;
+$font-family-secondary:    "Open Sans", Arial, sans-serif;
+$font-size-base:           16px;
+
+$font-family-primary-th:   "DBAdmanRoundedX", Arial, sans-serif;
+$font-family-secondary-th: "THSarabunNew", Arial, sans-serif;
+$font-size-base-th:        22px;
+
+$font-family-primary-hk:   "PingFang TC", -apple-system, BlinkMacSystemFont, "Microsoft Yahei", Helvetica, Arial, sans-serif;
+$font-family-secondary-hk: $font-family-primary-hk;
+$font-size-base-hk:        16px;
+
+$font-family-primary-vn:   "Open Sans w/vn glyphs", Arial, sans-serif;
+$font-family-secondary-vn: $font-family-primary-vn;
+$font-size-base-vn:        16px;
+
+$font-families: (
+  font-family-primary: $font-family-primary,
+  font-family-secondary: $font-family-secondary,
+  font-family-primary-th: $font-family-primary-th,
+  font-family-secondary-th: $font-family-secondary-th,
+  font-family-primary-hk: $font-family-primary-hk,
+  font-family-secondary-hk: $font-family-secondary-hk,
+  font-family-primary-vn: $font-family-primary-vn,
+  font-family-secondary-vn: $font-family-secondary-vn
+);
+
+/**
+  * Default font size settings
+  */
+
+$font-size-6: px-to-rem(6px);
+$font-size-8: px-to-rem(8px);
+$font-size-9: px-to-rem(9px);
+$font-size-10: px-to-rem(10px);
+$font-size-12: px-to-rem(12px);
+$font-size-13: px-to-rem(13px);
+$font-size-14: px-to-rem(14px);
+$font-size-16: px-to-rem(16px);
+$font-size-18: px-to-rem(18px);
+$font-size-19: px-to-rem(19px);
+$font-size-20: px-to-rem(20px);
+$font-size-22: px-to-rem(22px);
+$font-size-24: px-to-rem(24px);
+$font-size-26: px-to-rem(26px);
+$font-size-28: px-to-rem(28px);
+$font-size-30: px-to-rem(30px);
+$font-size-32: px-to-rem(32px);
+$font-size-36: px-to-rem(36px);
+$font-size-40: px-to-rem(40px);
+$font-size-46: px-to-rem(46px);
+$font-size-48: px-to-rem(48px);
+
+$font-sizes: (
+  font-size-6: $font-size-6,
+  font-size-8: $font-size-8,
+  font-size-9: $font-size-9,
+  font-size-10: $font-size-10,
+  font-size-12: $font-size-12,
+  font-size-13: $font-size-13,
+  font-size-14: $font-size-14,
+  font-size-16: $font-size-16,
+  font-size-18: $font-size-18,
+  font-size-19: $font-size-19,
+  font-size-20: $font-size-20,
+  font-size-22: $font-size-22,
+  font-size-24: $font-size-24,
+  font-size-26: $font-size-26,
+  font-size-28: $font-size-28,
+  font-size-30: $font-size-30,
+  font-size-32: $font-size-32,
+  font-size-36: $font-size-36,
+  font-size-40: $font-size-40,
+  font-size-46: $font-size-46,
+  font-size-48: $font-size-48
+);
+
+/**
+  * Themed font size settings
+  */
+
+$themes-fonts: (
+  th: (
+    font-family-primary: $font-family-primary-th,
+    font-family-secondary: $font-family-secondary-th,
+    font-size-base: $font-size-base-th,
+    font-size-6: px-to-rem(12px),
+    font-size-8: px-to-rem(14px),
+    font-size-10: px-to-rem(16px),
+    font-size-12: px-to-rem(18px),
+    font-size-13: px-to-rem(19px),
+    font-size-14: px-to-rem(20px),
+    font-size-16: px-to-rem(22px),
+    font-size-18: px-to-rem(24px),
+    font-size-19: px-to-rem(25px),
+    font-size-20: px-to-rem(26px),
+    font-size-22: px-to-rem(28px),
+    font-size-24: px-to-rem(32px),
+    font-size-26: px-to-rem(34px),
+    font-size-28: px-to-rem(36px),
+    font-size-30: px-to-rem(38px),
+    font-size-32: px-to-rem(42px),
+    font-size-34: px-to-rem(46px),
+    font-size-36: px-to-rem(48px),
+    font-size-40: px-to-rem(54px),
+    font-size-46: px-to-rem(64px),
+    font-size-48: px-to-rem(66px)
+  ),
+  hk: (
+    font-family-primary: $font-family-primary-hk,
+    font-family-secondary: $font-family-secondary-hk,
+    font-size-base: $font-size-base-hk
+  ),
+  vn: (
+    font-family-primary: $font-family-primary-vn,
+    font-family-secondary: $font-family-secondary-vn,
+    font-size-base: $font-size-base-vn
+  )
+);

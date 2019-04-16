@@ -1,7 +1,10 @@
 {
-  "env": { 
+  "env": {
+    "jasmine": true,
     "jest": true
   },
-  "globals": { 
+  "globals": {
+    "expect": true,
+    "sinon": true
   }
 }

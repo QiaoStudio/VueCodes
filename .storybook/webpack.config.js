@@ -28,9 +28,11 @@ module.exports = (storybookBaseConfig, configType) => {
   // configType has a value of 'DEVELOPMENT' or 'PRODUCTION'
   // You can change the configuration based on that.
   // 'PRODUCTION' is used when building the static version of storybook.
-
+  storybookBaseConfig.devtool = 'inline-source-map'
   // Make whatever fine-grained changes you need
-  storybookBaseConfig.resolve.alias = Object.assign({}, storybookBaseConfig.resolve.alias, baseWebpackConfig.resolve.alias)
+  storybookBaseConfig.resolve.alias = Object.assign({
+    'addon-knobs': path.resolve(__dirname, '../node_modules/@storybook/addon-knobs')
+  }, storybookBaseConfig.resolve.alias, baseWebpackConfig.resolve.alias)
 
   storybookBaseConfig.module.rules.unshift(createLintingRule())
   storybookBaseConfig.module.rules.push({
@@ -58,11 +60,17 @@ module.exports = (storybookBaseConfig, configType) => {
     storybookBaseConfig.module.rules.push(rule);
   })
 
-  // storybookBaseConfig.plugins.push(new webpack.ProvidePlugin({
-  //   jQuery: 'jquery',
-  //   $: 'jquery',
-  //   "window.jQuery": "jquery"
-  // }));
+  storybookBaseConfig.plugins.push(new webpack.ProvidePlugin({
+    jQuery: 'jquery',
+    $: 'jquery',
+    "window.jQuery": "jquery",
+    text: ["addon-knobs", "text"],
+    select: ["addon-knobs", "select"],
+    boolean: ["addon-knobs", "boolean"],
+    number: ["addon-knobs", "number"],
+    array: ["addon-knobs", "array"],
+    date: ["addon-knobs", "date"]
+  }));
 
   storybookBaseConfig.plugins.push(new StyleLintPlugin());
 

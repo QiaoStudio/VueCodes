@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    #RESPONSIVE
+\*------------------------------------*/
+
+@import "../variables";
+
+/**
+  * Screen breakpoint
+  */
+
+// Mobile (<768px) xs
+@mixin xs {
+  @media only screen and (max-width: $screen-sm-max) {
+    @content;
+  }
+}
+
+// Tablet and Desktop (>=768px) sm
+@mixin sm {
+  @media only screen and (min-width: $screen-md-min) {
+    @content;
+  }
+}
+
+// Desktop and Large desktop (>=992px) md
+@mixin md {
+  @media only screen and (min-width: $screen-lg-min) {
+    @content;
+  }
+}
+
+// Large (>=1200px)
+@mixin lg {
+  @media only screen and (min-width: $screen-xl-min) {
+    @content;
+  }
+}
+
+// Tablet and Mobile (<992px)
+@mixin tabletAndMobile {
+  @media only screen and (max-width: $screen-md-max) {
+    @content;
+  }
+}
+
+// Tablet (>=768px && <992px)
+@mixin onlyTablet {
+  @media only screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    @content;
+  }
+}

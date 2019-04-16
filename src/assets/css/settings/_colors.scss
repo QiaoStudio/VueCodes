@@ -1,0 +1,115 @@
+/*------------------------------------*\
+    #COLORS
+\*------------------------------------*/
+
+/**
+  * Basic color variable
+  * Never use basic color variable in component directly
+  */
+
+$color-00b84b: #00b84b; //green-1 primary green
+$color-0c9444: #0c9444; //green-2 primary green hover
+$color-ebf7e5: #ebf7e5; //green-3 notification box
+$color-8fca3a: #8fca3a; //green-4 tick icon
+$color-227fed: #227fed; //blue-1 secondary blue
+$color-296fc1: #296fc1; //blue-2 secondary blue hover
+$color-222e4b: #222e4b; //blue-4 dark theme background
+$color-f5b068: #f5b068; //orange-1 announcement labels
+$color-ffe6b3: #ffe6b3; //orange-3 notification box
+$color-d58600: #d58600; //orange-5 mobile2.0 text & icon
+$color-f1485e: #f1485e; //red-1 announcement labels
+$color-ed1934: #ed1934; //red-2
+$color-fdecee: #fdecee; //red-3 mobile 2.0 label
+
+$color-ffffff: #ffffff; //white-1 pure white
+
+$color-000000: #000000; //black-1 pure black
+$color-181f22: #181f22; //black-2 text black
+$color-2f3639: #2f3639; //black-3 background black
+
+$color-f7f8f9: #f7f8f9; //grey-1 lightest background grey
+$color-f1f3f4: #f1f3f4; //grey-2 standard background light grey
+$color-dddddd: #dddddd; //grey-3 bootstrap border colour & form disabled text
+$color-c4d0d5: #c4d0d5; //grey-4 font grey
+$color-93a4ac: #93a4ac; //grey-5 font grey
+$color-627279: #627279; //grey-6 font grey
+$color-b6bdb9: #b6bdb9; //grey-7 disabled grey
+
+/**
+  * Text Colors
+  * 1) These are text colors, such as body copy.
+  */
+
+$color-text-black-1: $color-000000;
+$color-text-black-2: $color-181f22;
+$color-text-white-1: $color-ffffff;
+$color-text-orange-1: $color-f5b068;
+$color-text-orange-5: $color-d58600;
+$color-text-gray-3: $color-dddddd;
+$color-text-gray-5: $color-93a4ac;
+$color-text-gray-6: $color-627279;
+$color-text-gray-7: $color-b6bdb9;
+$color-text-blue-1: $color-227fed;
+$color-text-blue-2: $color-296fc1;
+$color-text-red-1: $color-f1485e;
+$color-text-green-1: $color-00b84b;
+$color-text-green-2: $color-0c9444;
+
+/**
+  * Border Colors
+  */
+
+$color-border-gray-2: $color-f1f3f4;
+$color-border-gray-3: $color-dddddd;
+$color-border-gray-4: $color-c4d0d5;
+$color-border-gray-5: $color-93a4ac;
+$color-border-gray-6: $color-627279;
+$color-border-gray-7: $color-b6bdb9;
+$color-border-black-1: $color-000000;
+$color-border-black-2: $color-181f22;
+$color-border-white-1: $color-ffffff;
+$color-border-green-1: $color-00b84b;
+$color-border-green-2: $color-0c9444;
+$color-border-blue-1: $color-227fed;
+$color-border-blue-2: $color-296fc1;
+$color-border-red-1: $color-f1485e;
+
+/**
+  * Background Colors
+  */
+
+$color-background-gray-1: $color-f7f8f9;
+$color-background-gray-2: $color-f1f3f4;
+$color-background-gray-3: $color-dddddd;
+$color-background-gray-5: $color-93a4ac;
+$color-background-gray-6: $color-627279;
+$color-background-gray-7: $color-b6bdb9;
+$color-background-white-1: $color-ffffff;
+$color-background-green-1: $color-00b84b;
+$color-background-green-2: $color-0c9444;
+$color-background-green-3: $color-ebf7e5;
+$color-background-blue-1: $color-227fed;
+$color-background-blue-2: $color-296fc1;
+$color-background-orange-1: $color-f5b068;
+$color-background-orange-3: $color-ffe6b3;
+$color-background-red-1: $color-f1485e;
+$color-background-red-3: $color-fdecee;
+$color-background-black-1: $color-000000;
+$color-background-black-2: $color-181f22;
+$color-background-black-3: $color-2f3639;
+
+/**
+  * Box shadow Colors
+  */
+
+$color-box-shadow-black-1: $color-000000;
+$color-box-shadow-green-1: $color-00b84b;
+$color-box-shadow-white-1: $color-ffffff;
+
+/**
+  * Disable colors
+  */
+
+$color-background-gray-disabled: $color-b6bdb9;
+$color-border-gray-disabled: $color-b6bdb9;
+$color-text-gray-disabled: $color-b6bdb9;

@@ -1,0 +1,24 @@
+/*------------------------------------*\
+    #ICON
+\*------------------------------------*/
+
+@import "../themes/globals/icons";
+
+/**
+  * Icon Size
+  */
+
+@mixin icon-size-sm {
+  height: $size-icon-sm;
+  width: $size-icon-sm;
+}
+
+@mixin icon-size-md {
+  width: $size-icon-md;
+  height: $size-icon-md;
+}
+
+@mixin icon-size-lg {
+  width: $size-icon-lg;
+  height: $size-icon-lg;
+}

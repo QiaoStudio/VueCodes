@@ -21,8 +21,7 @@
   </component>
 </template>
 <style lang="scss">
-@import "vanilla-ripplejs/ripple.css";
-// @import '~assets/css/elements/button';
+@import '~assets/css/elements/button';
 </style>
 <script>
 import Vue from 'vue'

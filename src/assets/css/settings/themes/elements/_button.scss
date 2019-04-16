@@ -1,0 +1,188 @@
+@import "../../../settings/style";
+/**
+  * button color
+  */
+$color-btn-disable: $color-text-gray-disabled;
+//button-primary
+$color-btn-primary: $color-text-green-1;
+$color-btn-primary-text: $color-text-white-1;
+$color-btn-primary-hover: $color-text-green-2;
+//button-ghost
+$color-btn-ghost: transparent;
+$color-btn-ghost-text: $color-text-black-2;
+$color-btn-ghost-border:$color-border-black-2;
+$color-btn-ghost-primary-light-text: $color-text-white-1;
+$color-btn-ghost-primary-light-border: $color-border-white-1;
+$color-btn-ghost-secondary-text: $color-text-green-1;
+$color-btn-ghost-secondary-border: $color-border-gray-4;
+$color-btn-ghost-hover: $color-text-green-2;
+$color-btn-ghost-text-hover: $color-text-white-1;
+//button-text
+$color-text-btn-bg: transparent;
+$color-text-btn-text: $color-text-green-1;
+$color-text-btn-text-hover: $color-text-green-2;
+$color-text-btn-ripple:  $color-text-green-1;
+//button-radio&&button-checkbox
+$color-btn-radio-checkbox-text:$color-text-green-1;
+$color-btn-radio-checkbox-text-hover: $color-btn-primary-hover;
+$color-btn-radio-checkbox-text-disabled: $color-btn-disable;
+$color-btn-radio-checkbox-border-disable: $color-border-gray-disabled;
+$color-btn-checkbox-radio-ripple:  $color-text-green-1;
+$color-btn-radio-checkbox-background-disable: $color-btn-disable;
+//button-radio
+$color-btn-radio-text-active-hover: $color-text-green-2;
+$color-btn-radio-circle: $color-border-black-2;
+$color-btn-radio-dot: $color-background-green-1;
+$color-btn-radio-dot-disable: $color-btn-disable;
+//button-checkbox
+$color-btn-checkbox-border: $color-border-green-1;
+$color-btn-checkbox-border-hover: $color-btn-primary-hover;
+$color-btn-checkbox-tick-text: $color-text-white-1;
+$color-btn-checkbox-tick-background: $color-background-green-1;
+$color-btn-checkbox-tick-background-hover: $color-btn-primary-hover;
+//button-home
+$color-btn-home-border: transparent;
+$color-btn-home-primary-text: $color-text-white-1;
+$color-btn-home-primary-background: $color-background-green-1;
+$color-btn-home-secondary-text: $color-text-green-1;
+$color-btn-home-secondary-background: $color-background-white-1;
+$color-btn-home-secondary-text-disabled: $color-text-gray-disabled;
+$color-btn-home-primary-background-disabled: $color-background-gray-disabled;
+$color-btn-home-primary-text-hover: $color-text-white-1;
+$color-btn-home-primary-border-hover: $color-border-green-2;
+$color-btn-home-primary-background-hover: $color-background-green-2;
+$color-btn-home-secondary-text-hover: $color-text-white-1;
+$color-btn-home-secondary-border-hover: $color-border-green-1;
+$color-btn-home-secondary-background-hover: $color-background-green-1;
+//button tertiary
+$color-btn-tertiary-text: $color-text-black-2;
+$color-btn-tertiary-background: $color-background-white-1;
+$color-btn-tertiary-text-disabled: $color-text-gray-disabled;
+
+/**
+  * button height
+  */
+$padding-btn: 16px 20px;
+$padding-xs-v: 8px;
+$padding-xs-h: 12px;
+$line-height-btn: 19px;
+$line-height-old-btn: 1.42857;
+//button-small
+$padding-top-btn-sm: 12px;
+$padding-bottom-btn-sm: 12px;
+$line-height-btn-sm: 15px;
+//button-text
+$padding-top-btn-text: 12px;
+$padding-bottom-btn-text: 12px;
+$padding-top-btn-text-sm: 8px;
+$padding-bottom-btn-text-sm: 8px;
+$line-height-btn-text-sm: 15px;
+//button-radio&&button-checkbox
+$padding-btn-radio-checkbox: 12px;
+$padding-btn-radio-checkbox-sm: 8px;
+//button-ghost
+$padding-btn-ghost: 14px 20px;
+$padding-btn-ghost-focus: 16px 22px;
+$padding-btn-ghost-sm: 11px 19px;
+$padding-btn-ghost-focus-sm: 12px 20px;
+//button-home
+$padding-btn-home-primary: 12px;
+$padding-btn-home-secondary: 6px 12px;
+
+/**
+  * button border radius
+  */
+//button-home
+$radius-btn-home-primary: $border-radius-large;
+$radius-btn-home-secondary: $border-radius-base;
+
+/**
+  * themes
+  */
+$themes-button: (
+  th: (
+    //button
+    padding-btn: 12px 20px,
+    line-height-btn: 29px,
+    line-height-old-btn: 1.27273,
+    //button-small
+    padding-top-btn-sm: 8px,
+    padding-bottom-btn-sm: 8px,
+    line-height-btn-sm: 23px,
+    //button-text
+    padding-top-btn-text: 8px,
+    padding-bottom-btn-text: 8px,
+    padding-top-btn-text-sm: 4px,
+    padding-bottom-btn-text-sm: 4px,
+    line-height-btn-text-sm: 23px,
+    //button-radio&&button-checkbox
+    padding-btn-radio-checkbox: 8px 12px,
+    padding-btn-radio-checkbox-sm: 4px 8px,
+    //button-ghost
+    padding-btn-ghost: 12px 20px,
+    padding-btn-ghost-focus: 14px 22px,
+    padding-btn-ghost-sm: 7px 19px,
+    padding-btn-ghost-focus-sm: 8px 20px,
+  ),
+  dark: (
+    color-btn-disable: $color-text-gray-disabled,
+    //button-primary
+    color-btn-primary: $color-text-black-1,
+    color-btn-primary-text: $color-text-white-1,
+    color-btn-primary-hover: $color-text-black-1,
+    //button-ghost
+    color-btn-ghost: $color-text-gray-disabled,
+    color-btn-ghost-text: $color-text-white-1,
+    color-btn-ghost-primary-light-text: $color-text-white-1,
+    color-btn-ghost-primary-light-border: $color-border-gray-disabled,
+    color-btn-ghost-secondary-text: $color-text-green-1,
+    color-btn-ghost-secondary-border: $color-border-gray-disabled,
+    color-btn-ghost-hover: $color-text-gray-disabled,
+    color-btn-ghost-text-hover: $color-text-white-1,
+    //text-button
+    color-text-btn-bg: transparent,
+    color-text-btn-text: $color-text-black-1,
+    color-text-btn-text-hover: $color-text-green-2,
+    color-text-btn-ripple:  $color-text-green-1,
+    //button-radio&&button-checkbox
+    color-btn-radio-checkbox-text: $color-text-black-1,
+    color-btn-radio-checkbox-text-hover: $color-text-black-1,
+    color-btn-radio-checkbox-text-disabled: $color-text-gray-disabled,
+    color-btn-radio-checkbox-border-disable: $color-border-gray-disabled,
+    color-btn-checkbox-radio-ripple:  $color-text-green-1,
+    color-btn-radio-checkbox-background-disable:  $color-background-gray-disabled,
+    //button-radio
+    color-btn-radio-text-active-hover: $color-text-gray-disabled,
+    color-btn-radio-circle: $color-border-black-2,
+    color-btn-radio-dot: $color-background-black-2,
+    color-btn-radio-dot-disable: $color-border-gray-disabled,
+    //button-checkbox
+    color-btn-checkbox-border: $color-border-black-1,
+    color-btn-checkbox-border-hover:  $color-border-black-1,
+    color-btn-checkbox-tick-text: $color-text-white-1,
+    color-btn-checkbox-tick-background: $color-background-black-1,
+    color-btn-checkbox-tick-background-hover: $color-background-black-1,
+    //opacity
+    opacity-btn-home-disabled: 0.4
+  ),
+  blue: (
+    color-btn-home-primary-text: $color-text-white-1,
+    color-btn-home-primary-background: $color-background-blue-1,
+    color-btn-home-secondary-text: $color-text-blue-1,
+    color-btn-home-secondary-background: $color-background-white-1,
+    color-btn-home-primary-text-hover: $color-text-white-1,
+    color-btn-home-primary-border-hover: $color-border-blue-2,
+    color-btn-home-primary-background-hover: $color-background-blue-2,
+    color-btn-home-secondary-text-hover: $color-text-white-1,
+    color-btn-home-secondary-border-hover: $color-border-blue-1,
+    color-btn-home-secondary-background-hover: $color-background-blue-1,
+    btn-ghost-secondary-border:1px solid $color-border-gray-3,
+    padding-btn-ghost-secondary: 8px 16px,
+    color-btn-ghost-secondary-text: $color-text-blue-1,
+    btn-ghost-secondary-border-hover:1px solid $color-border-blue-1,
+    radius-btn-ghost-secondary-border: 2px,
+    color-btn-ghost-secondary-text-hover: $color-text-white-1,
+    color-btn-ghost-secondary-background: $color-background-white-1,
+    color-btn-ghost-secondary-background-hover: $color-background-blue-1
+  )
+);

@@ -1,0 +1,111 @@
+/*------------------------------------*\
+    #MINI RESET
+\*------------------------------------*/
+
+/**
+  * Reset Bootstrap element style
+  */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+figure {
+  margin: 0;
+}
+
+sub {
+  bottom: 0;
+}
+
+html {
+  font-size: $html-base-font-size;
+  font-family: $font-family-secondary;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+/**
+  * Ul/Ol
+  */
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+/**
+  * <a> focus
+  */
+
+a:focus {
+  outline: none;
+  outline-offset: 0;
+}
+
+:focus {
+  outline: none;
+}
+
+/**
+  * Input
+  */
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline-offset: 0;
+  outline: none;
+}
+
+/**
+  * Placeholder
+  */
+
+::-webkit-input-placeholder {
+  color: $color-text-gray-5;
+}
+
+input:-moz-placeholder {
+  color: $color-text-gray-5;
+  opacity: 1;
+}
+
+input::-moz-placeholder {
+  color: $color-text-gray-5;
+  opacity: 1;
+}
+
+textarea:-moz-placeholder {
+  color: $color-text-black-2;
+  opacity: 1;
+}
+
+textarea::-moz-placeholder {
+  color: $color-text-black-2;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: $color-text-black-2;
+}

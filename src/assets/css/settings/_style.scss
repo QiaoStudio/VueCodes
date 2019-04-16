@@ -1,0 +1,13 @@
+/**
+  * Import settings needed
+  * Use specific modules for this component
+  * For this component, we used globals, responsives, colors, & fonts modules
+  * And for fonts, SG font is enabled by default
+  */
+
+@import "functions";
+@import "colors";
+@import "responsives";
+@import "variables";
+@import "fonts";
+@import "mixins/style";

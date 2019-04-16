@@ -1,0 +1,33 @@
+/*------------------------------------*\
+    #THEME
+\*------------------------------------*/
+
+/**
+  * Implementation of themes
+  */
+
+@mixin themify($themes) {
+
+  @each $theme,
+    $map in $themes {
+    .dp-theme-#{$theme} & {
+      $theme-map: () !global;
+
+      &:not(.dp-theme-null) { // If this class is set to element, it will nullify theme style
+        @each $key,
+          $submap in $map {
+          $value: map-get(map-get($themes, $theme), "#{$key}");
+
+          // @if $key=="font-size-base" {
+          //   $value: px-to-rem(map-get(map-get($themes, $theme), "#{$key}"));
+          // }
+
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        }
+
+        @content;
+        // $theme-map: null !global;
+      }
+    }
+  }
+}

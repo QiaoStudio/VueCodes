@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    #TRUNCATION
+\*------------------------------------*/
+
+/**
+  * Multiline text ellipsis
+  */
+
+@mixin truncate($max-height, $lines: 2) {
+  overflow: hidden;
+  display: block;
+  display: -webkit-box;
+  text-overflow: -o-ellipsis-lastline;
+  max-height: $max-height; // Fallback for non-webkit browsers.
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}

@@ -1,0 +1,25 @@
+/*------------------------------------*\
+    #TYPOGRAPHY
+\*------------------------------------*/
+
+/**
+  * Add custom fonts
+  */
+
+@include font-face("Alleyn", "~fonts/alleyn/alleyn-regular", 400, normal);
+@include font-face("Alleyn", "~fonts/alleyn/alleyn-medium", 500, normal);
+@include font-face("Alleyn", "~fonts/alleyn/alleyn-bold", 700, normal);
+
+@include font-face("Open Sans", "~fonts/opensans/opensans-regular-webfont", 400, normal);
+@include font-face("Open Sans", "~fonts/opensans/opensans-semibold-webfont", 600, normal);
+@include font-face("Open Sans", "~fonts/opensans/opensans-bold-webfont", 700, normal);
+
+@include font-face("Open Sans w/vn glyphs", "~fonts/opensans/opensans-w-vn-glyphs-regular-webfont", 400, normal);
+@include font-face("Open Sans w/vn glyphs", "~fonts/opensans/opensans-w-vn-glyphs-semibold-webfont", 600, normal);
+@include font-face("Open Sans w/vn glyphs", "~fonts/opensans/opensans-w-vn-glyphs-bold-webfont", 700, normal);
+
+// TH Font
+@include font-face("DBAdmanRoundedX", "~fonts/dbadmanroundedx/dbadmanroundedx-regular", 400, normal);
+@include font-face("DBAdmanRoundedX", "~fonts/dbadmanroundedx/dbadmanroundedx-bold", 700, normal);
+@include font-face("THSarabunNew", "~fonts/THSarabunNew/THSarabunNew", 400, normal);
+@include font-face("THSarabunNew", "~fonts/THSarabunNew/THSarabunNewBold", 700, normal);

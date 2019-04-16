@@ -1,0 +1,69 @@
+/*------------------------------------*\
+    #FUNCTIONS
+\*------------------------------------*/
+
+/**
+  * Strip Units
+  */
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+/**
+  * Change pxTo
+  */
+
+@function pxTo($px, $basic, $type) {
+  @if unitless($px) == false {
+    $px: strip-units($px);
+  }
+
+  @if unitless($basic) == false {
+    $basic: strip-units($basic);
+  }
+
+  $typeValue: 1;
+
+  @if $type == "rem" {
+    $typeValue: 1rem;
+  }
+  @else if $type == "em" {
+    $typeValue: 1em;
+  }
+  @else if $type == "%" {
+    $typeValue: 100%;
+  }
+  @else if $type == "rate" {
+    $typeValue: 1;
+  }
+  @else {
+    $typeValue: 1px;
+  }
+
+  @return $px / $basic * $typeValue;
+}
+
+@function px-to-rem($px) {
+  @return pxTo($px,$html-base-font-size, "rem");
+}
+
+@function px-to-em($px, $basic) {
+  @return pxTo($px, $basic, "em");
+}
+
+@function px-to-percent($px, $basic) {
+  @return pxTo($px, $basic, "%");
+}
+
+@function px-to-rate($px, $basic) {
+  @return pxTo($px, $basic, "rate");
+}
+
+/**
+  * Themed
+  */
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
