@@ -1,6 +1,6 @@
 # wue_components
 
-> use storybook to create a vue project
+> Create a vue project using storybook
 
 ## Build Setup
 
